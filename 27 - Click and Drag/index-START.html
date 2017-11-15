@@ -75,7 +75,8 @@
 
   });
 
-  window.addEventListener('click', function() {
+  window.addEventListener('click', function(e) {
+      if (e.target === modal) return;
       modal.style.display = 'none';
   });
 
@@ -85,14 +86,8 @@
 
       modal.style.display = 'block';
       modal.style.setProperty('background-image', `url("${atr}")`);
-
-      console.log(atr);
-      console.log(modalContent)
   }
-
-
   items.forEach(item => item.addEventListener('dblclick', pickPicture));
-
 
 </script>
 
